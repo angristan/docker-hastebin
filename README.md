@@ -19,8 +19,8 @@ This image is automatically built by [Drone](https://drone.angristan.xyz/angrist
 
 ## Environment variables
 
-- **`GID`** : user id *(default : `4242`)*
-- **`UID`** : group id *(default : `4242`)*
+- **`GID`**: user id *(default: `4242`)*
+- **`UID`**: group id *(default: `4242`)*
 
 ## Usage
 
