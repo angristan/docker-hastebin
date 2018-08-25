@@ -5,12 +5,12 @@ LABEL source="https://github.com/Angristan/dockerfiles/tree/master/hastebin"
 
 ENV UID=4242 GID=4242
 
-# RUN apk -U upgrade \
-#     && apk --no-cache add git su-exec \
-#     && git clone https://github.com/seejohnrun/haste-server.git /app \
-#     && cd /app \
-#     && npm intall \
-#     && npm cache clean
+RUN apk -U upgrade \
+    && apk --no-cache add git su-exec \
+    && git clone https://github.com/seejohnrun/haste-server.git /app \
+    && cd /app \
+    && npm intall \
+    && npm cache clean
 
 COPY rootfs /
 
