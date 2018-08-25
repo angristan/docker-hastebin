@@ -9,7 +9,7 @@ RUN apk -U upgrade \
     && apk --no-cache add git su-exec \
     && git clone https://github.com/seejohnrun/haste-server.git /app \
     && cd /app \
-    && npm intall \
+    && npm install \
     && npm cache clean
 
 COPY rootfs /
