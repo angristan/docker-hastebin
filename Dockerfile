@@ -3,12 +3,15 @@ FROM node:6-alpine
 LABEL maintainer="Angristan https://github.com/Angristan/dockerfiles"
 LABEL source="https://github.com/Angristan/dockerfiles/tree/master/hastebin"
 
+ARG HASTEBIN_VER=master
+
 ENV UID=4242 GID=4242
 
 RUN apk -U upgrade \
     && apk --no-cache add git su-exec \
     && git clone https://github.com/seejohnrun/haste-server.git /app \
     && cd /app \
+    && git checkout ${HASTEBIN_VER}
     && npm install \
     && npm cache clean
 

@@ -10,12 +10,21 @@ This image is automatically built by [Drone](https://drone.angristan.xyz/angrist
 
 - Based on Alpine Linux.
 - Latest code from [seejohnrun/haste-server](https://github.com/seejohnrun/haste-server)
-- Run in unprivileged mode as `$UID:$GID` (`4242:4242` by default)
+- Ran as an unprivileged user (see `UID` and `GID`)
 - Uses the default file storage driver (no expiration).
+
+## Build-time variables
+
+- **`HASTEBIN_VER`**: A commit or a branch since the repo doesn't have tags (default: `master`)
+
+## Environment variables
+
+- **`GID`** : user id *(default : `4242`)*
+- **`UID`** : group id *(default : `4242`)*
 
 ## Usage
 
-```docker
+```sh
 docker run -d \
   --name hastebin \
   -p 80:7777 \
@@ -24,7 +33,7 @@ docker run -d \
 
 As said above, the container will run as `4242:4242` by default, but you can specify the `UID` and `GID` yourself:
 
-```docker
+```sh
 docker run -d \
   --name hastebin \
   -p 80:7777 \
@@ -39,7 +48,7 @@ By default, the container will create a volume to store `/app/data`. This is whe
 
 You can specify a volume yourself:
 
-```docker
+```sh
 docker run -d \
   --name hastebin \
   --mount source=hastebin,target=/app/data \
@@ -51,7 +60,7 @@ docker run -d \
 
 Or use a bind mount:
 
-```docker
+```sh
 docker run -d \
   --name hastebin \
   --mount type=bind,source="$(pwd)"/data,target=/app/data \
