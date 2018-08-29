@@ -2,19 +2,19 @@ variables:
   LATEST_VER: angristan/hastebin:latest
 
 stages:
-  - docker build
-  - docker push
+  - Build image
+  - Push to Docker Hub
 
-build images:
+docker-build:
   image: docker:stable
-  stage: docker build
+  stage: Build image
   script:
   - docker info
   - docker build -t $LATEST_VER .
 
-push to hub:
+docker push:
   image: docker:stable
-  stage: docker push
+  stage: Push to Docker Hub
   only:
   - master
   script:
