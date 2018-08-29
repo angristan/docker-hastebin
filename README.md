@@ -4,7 +4,7 @@
 
 [Hastebin](https://github.com/seejohnrun/haste-server) is an open-source pastebin software written in node.js.
 
-This image is automatically built by [Drone](https://drone.angristan.xyz/angristan/docker-hastebin) and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/hastebin/).
+This image is automatically built by and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/hastebin/).
 
 ## Features
 
