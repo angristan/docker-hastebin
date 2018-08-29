@@ -1,0 +1,22 @@
+variables:
+  LATEST_VER: angristan/hastebin:latest
+
+stages:
+  - docker build
+  - docker push
+
+build images:
+  image: docker:stable
+  stage: docker build
+  script:
+  - docker info
+  - docker build -t $LATEST_VER .
+
+push to hub:
+  image: docker:stable
+  stage: docker push
+  only:
+  - master
+  script:
+  - echo "$REGISTRY_PASSWORD" | docker login -u "$REGISTRY_USER" --password-stdin
+  - docker push $LATEST_VER && docker image rm $LATEST_VER
