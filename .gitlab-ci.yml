@@ -5,7 +5,7 @@ stages:
   - Build image
   - Push to Docker Hub
 
-docker-build:
+docker build:
   image: docker:stable
   stage: Build image
   script:
