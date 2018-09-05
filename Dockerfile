@@ -1,4 +1,4 @@
-FROM node:6-alpine
+FROM node:8-alpine
 
 LABEL maintainer="angristan"
 LABEL source="https://github.com/angristan/docker-hastebin"
