@@ -12,7 +12,10 @@ RUN apk -U upgrade \
     && git clone https://github.com/seejohnrun/haste-server.git /app \
     && cd /app \
     && git checkout ${HASTEBIN_VER} \
-    && npm install
+    && npm install \
+    && npm cache clean --force \
+    && apk del git \
+    && rm -rf /var/lib/apk/* /var/cache/apk/*
 
 COPY rootfs /
 
