@@ -6,6 +6,8 @@
 
 This image is automatically built by [GitLab CI](https://gitlab.com/angristan/docker-hastebin/pipelines) and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/hastebin/).
 
+**I won't update this image anymore. Feel free to fork the repo.**
+
 ## Features
 
 - Based on Alpine Linux.
